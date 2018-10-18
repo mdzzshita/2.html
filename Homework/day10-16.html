@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>翻转</title>
+        <style>
+            body{
+                padding:200px;
+                color:red;
+            }
+            span{
+                font-size: 100px;
+                font-family: "微软雅黑";
+                position: relative;
+            }
+            span:before,span:after{
+                content:attr(data-q);
+                position: absolute;
+                left: 0;
+                top: 0;
+                transform-origin: left center;
+                transition:all 0.3s linear 0s;
+            }
+            span:before{
+                color:#fff;
+                z-index: 3;
+                transform:rotateY(15deg);
+            }
+            span:after{
+                color:rgba(0,0,0,0.3);
+                z-index:2;
+                transform: rotateY(0deg) scale(1.1, 1);
+            }
+            span:hover:before{
+                transform:rotateY(40deg) skew(0deg, 3deg);
+            }
+            span:hover:after{
+                transform:rotateY(40deg) skew(0deg,20deg);
+            }
+	
+        </style>
+    </head>
+
+    <body>
+            <span data-q="王">王</span>
+            <span data-q="者">者</span>
+            <span data-q="荣">荣</span>
+            <span data-q="耀">耀</span>
+
+            <br /><br />
+
+            <a href="../index.html">首页</a>
+    </body>
+</html>
