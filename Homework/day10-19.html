@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>有东西</title>
+    <style>
+        ul 
+        {
+            margin-top: 0;
+            padding-left: 0;
+        }
+        .flex-card-list 
+        {
+            -webkit-box-pack: start;
+            justify-content: flex-start;
+            display: -webkit-box;
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 100%;
+        }
+
+        .flex-card-listitem 
+        {
+            display:flex;
+            
+        }
+
+        @media all and (min-width:40em)
+        {
+            .flex-card-list li 
+            {
+                width:50%;
+            }
+            .flex-card-list li
+            {
+                float:left;
+            }
+        }
+       
+
+        @media all and (min-width:40em) and (max-width:60em)
+         {
+            .flex-card-list li:nth-child(2n+1)
+            {
+                clear:both;
+            }
+        }
+
+
+        @media all and (min-width:60em)
+        {
+            .flex-card-list li
+            {
+                width:33.33%;
+            }
+            .no-flexbox .flex-card-list li:nth-child(3n+1) 
+            {
+                clear:both;
+            }
+        }
+
+        .flex-card 
+        {
+            display:flex;
+            flex-direction:column;
+            background: #fff;
+            border-radius: 5px;
+            margin-bottom: 1em;
+            padding: 1em
+        }
+
+        .flex-card-content
+        {
+            display:flex;
+            flex:1 0 auto; 
+            flex-direction:column;
+        }
+
+        .flex-card-content p 
+        {
+            flex:1 0 auto; 
+        }
+
+    </style>
+
+</head>
+
+<body>
+   
+<ul class="flex-card-list">
+	<li class="flex-card-listitem">
+		<div class="flex-card">
+			<div class="flex-card-image">
+				<img src="https://chriswrightdesign.com/img/placeholder.jpg" />
+			</div>
+			<div class="flex-card-content">
+				<h3 class="flex-card-heading">First</h3>
+				<p>I'm a card and I'm first.</p>
+				<a href="#" class="flex-card-button">Button</a>
+			</div>
+		</div>
+    </li>
+
+    <li class="flex-card-listitem">
+        <div class="flex-card">
+            <div class="flex-card-image">
+                <img src="https://chriswrightdesign.com/img/placeholder.jpg" />
+            </div>
+            <div class="flex-card-content">
+                <h3 class="flex-card-heading">First</h3>
+                <p>I'm a card and I'm first.</p>
+                <a href="#" class="flex-card-button">Button</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="flex-card-listitem">
+        <div class="flex-card">
+            <div class="flex-card-image">
+                <img src="https://chriswrightdesign.com/img/placeholder.jpg" />
+            </div>
+            <div class="flex-card-content">
+                <h3 class="flex-card-heading">First</h3>
+                <p>I'm a card and I'm first.</p>
+                <a href="#" class="flex-card-button">Button</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="flex-card-listitem">
+        <div class="flex-card">
+            <div class="flex-card-image">
+                <img src="https://chriswrightdesign.com/img/placeholder.jpg" />
+            </div>
+            <div class="flex-card-content">
+                <h3 class="flex-card-heading">First</h3>
+                <p>I'm a card and I'm first.</p>
+                <a href="#" class="flex-card-button">Button</a>
+            </div>
+        </div>
+    </li>
+
+    <li class="flex-card-listitem">
+        <div class="flex-card">
+            <div class="flex-card-image">
+                <img src="https://chriswrightdesign.com/img/placeholder.jpg" />
+            </div>
+            <div class="flex-card-content">
+                <h3 class="flex-card-heading">First</h3>
+                <p>I'm a card and I'm first.</p>
+                <a href="#" class="flex-card-button">Button</a>
+            </div>
+        </div>
+    </li>
+
+</ul>
+
+<br /><br />
+
+<a href="../index.html">首页</a>
+
+</body>
+</html>
