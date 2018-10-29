@@ -9,9 +9,13 @@ function startTimer(speed)
 
 startTimer(100);
 
-var h2Obj=document.querySelector('h2');
-var imgObj=document.querySelector('h2>>img')
+// 获取div#images元素
+var images1=document.querySelector('#images');
+// var imgObj=document.querySelector('h2>img');
+var images2=document.getElementById('images');
 console.log(imgObj);
+console.log(images1.children[3]);
+
 
 // var flag=true;
 

@@ -102,3 +102,30 @@ ul{
     font-weight: bold;
     overflow: hidden;
 }
+
+#images
+{
+    /* 相对于其正常位置进行定位 */
+    position: relative;
+}
+
+#images>a
+{
+    /* 设置 速记 透明度为1s 渐变 */
+    transition: opacity 1s linear;
+    /* 绝对定位 第一个父元素进行定位 */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.displayImg
+{
+    /* display: block; */
+    opacity: 1;
+}
+
+.hiddenImg
+{
+    /* display: none; */
+    opacity: 0;
+}
