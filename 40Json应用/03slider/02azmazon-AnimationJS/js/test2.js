@@ -75,8 +75,11 @@ function stopChange()
 var sliderDiv=document.querySelector(".slider");
 
 
-sliderDiv.addEventListener('mouseover', stopChange);
+// sliderDiv.addEventListener('mouseover', stopChange);
+// sliderDiv.addEventListener('mouseover', function () {    window.clearInterval(timer);  });
+sliderDiv.addEventListener('mouseover', ()=>{clearInterval(timer);});
 sliderDiv.addEventListener('mouseout', startChange);
+
 
 
 // 为所有文本li注册鼠标移入事件，移入之后，当前li高亮，跳转到对应图片
