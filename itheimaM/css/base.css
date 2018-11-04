@@ -65,7 +65,7 @@ input
 
 [class^="icon_"]
 {
-    background: url("") no-repeat;
+    background: url() no-repeat;
     background-size: 200px 200px;
 }
 

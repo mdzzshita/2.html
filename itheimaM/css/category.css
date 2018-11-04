@@ -2,14 +2,15 @@
 /* 左侧栏 */
 .hm_category_left
 {
-    width: 90px;
     height: 100%;
     overflow: hidden;
     float: left;
+    
 }
 
 .hm_category_left>ul
 {
+    padding: 0;
 
 }
 
@@ -21,11 +22,14 @@
     line-height: 50px;
     border-right: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+    list-style: none;
+    
 }
 
 .hm_category_left>ul>li a
 {
     display: block;
+    text-decoration: none;
 }
 
 .hm_category_left>ul>li.now
@@ -77,6 +81,7 @@
 .hot_cat>ul
 {
     width: 100%;
+    list-style: none;
 }
 
 .hot_cat>ul>li
