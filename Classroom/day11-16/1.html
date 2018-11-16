@@ -1,0 +1,179 @@
+<script>
+    function Person(name, age) {
+      this.name = name;                // 添加name属性
+      this.age = age;                  // 添加age属性
+      this.sayHello = function () {    // 添加sayHello()方法
+        console.log('你好，我是' + this.name);
+      };
+    }
+    var p1 = new Person('张三', 18);
+    var p2 = new Person('李四', 19);
+    console.log(p1);                  // 输出结果：Person {name: "张三", age: 18}
+    console.log(p2);                  // 输出结果：Person {name: "李四", age: 19}
+    p1.sayHello();                    // 输出结果：你好，我是 张三
+    console.log(p1.constructor);      // 输出结果：function Person(name, age) ……
+  
+  
+  
+    // 定义类---ES6新增
+    class Student {
+      //仅属性使用构造函数
+       constructor (name, age, gender) {    // 构造方法
+        this.name = name;                  // 添加name属性
+        this.age = age;                    // 添加age属性
+        this.gender = gender;              // 添加gender属性
+      }
+      // //函数独立列出，不用function关键字
+      // introduce() {                        // 定义introduce()方法
+      //   console.log('我是' + this.name + '，今年' + this.age + '岁。');
+      // }
+    }
+    // // 实例化时会自动调用constructor()构造方法
+    // var st = new Student('王五', 19, '男');
+    // st.introduce();    // 输出结果：我是王五，今年19岁。
+  
+  
+    var a1=new Student('王五1', 19, '男');
+    var a2=new Student('王五2', 19, '男');
+    var a3=new Student('王五3', 19, '男');
+    var a4=new Student('王五4', 19, '男');
+  
+    var stList=new Array();
+    stList.push(a1);
+    console.log(stList[0].name);
+  
+  
+    console.log(stList);
+    var array=[new Student('王五1', 19, '男'),new Student('王五2', 19, '男')];
+    console.log(array[01].name);
+    console.log(array);
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  // 商品类
+    class Product
+    {
+      constructor(id,tite,price,print)
+      {
+        this.id=id;
+        this.tite=tite;
+        this.price=price;
+        this.print=print;
+      }
+      introduce() {                        
+        console.log('编号:'+this.id +' 商品:' + this.tite +' 价格:'+this.price +" "+this.print);
+      }
+    }
+  
+  
+  // 订单类
+  class Order
+    {
+      constructor(product,qty)
+      {
+        // 订单类成员
+        this.id=product.id;
+        this.tite=product.tite;
+        this.price=product.price;
+        this.print=product.print;
+        this.qty=qty;
+      }
+    }
+  
+  
+  // 购物车数据类--确定格式
+    class CartData
+    {
+      constructor()
+      {
+        this.orderList=new Array();
+        this.units=0;
+        this.totalQty=0;
+        this.totalAmount=0;
+      }
+    }
+  
+  
+  // 将某个订单，加入购物车
+  function addtoCart(order)
+  {
+    var flag=true;
+    // for(const i in myCart.orderList)
+    for(var i=0;i<myCart.orderList.length;i++)
+    {
+      if(order.id ==myCart.orderList[i].id)
+      {
+        flag=false;
+        // 新增qty（数量）
+        myCart.orderList[i].qty+=order.qty;
+        break;
+      }
+    }
+  
+    if(flag)
+    {
+      // 新商品给样本++
+      myCart.orderList.push(order);
+      myCart.units++;
+    }
+    myCart.totalQty +=order.qty;
+    myCart.totalAmount +=order.price*order.qty;
+  }
+  
+  
+  
+  // 商品对象/实例
+    var product1=new Product(1,'30片巨补水 秋冬新款面膜',99.99,'http://img0.imgtn.bdimg.com/it/u=386741487,2010687147&fm=26&gp=0.jpg');
+    var product2=new Product(2,'飞机',88.88,'http://img0.imgtn.bdimg.com/it/u=386741487,2010687147&fm=26&gp=0.jpg');
+    product1.introduce();
+    console.log(product2);
+  
+  
+  
+  
+    var myCart=new CartData();
+  
+  // 创建订单对象
+    var order=new Order(product1,5);
+    // console.log(order);
+  
+  
+  
+  
+  // 实列化购物车数据--订单1进购myCart
+    // var myCart=new CartData();
+    // myCart.orderList.push(order);
+    // myCart.units=1;
+    // myCart.totalQty=order.qty;
+    // myCart.totalAmount=order.price*order.qty;
+    // console.log(myCart);
+    addtoCart(order);
+    console.log(myCart);
+  
+  
+  
+    order=new Order(product2,3);
+    addtoCart(order);
+    console.log(myCart);
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
