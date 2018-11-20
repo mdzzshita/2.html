@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script src="shoppingCart.js"></script>
+    <script>
+        var p=new Product("1","1","1",1);
+        // 订单
+        var order=new Order(p,2,true);
+        // 购物车数据
+        var cartData=new CartData();
+        cartData.orderList.push(order);
+        cartData.totalQty=order.qty;
+        cartData.totalAmount=order.qty*order.price;
+        cartData.units=1;
+
+        var cart=new ShoppingCart();
+        cart.setDataToLocalSatorge(cartData);
+        console.log(cart.getDataFromLocalSatorge())
+    </script>
+</body>
+</html>
