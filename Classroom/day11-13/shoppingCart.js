@@ -67,24 +67,94 @@ localStorage.removeItem("key")//删除变量名为key的存储变量
       getDataFromLocalSatorge()
       {
         let lzzyCart =localStorage.getItem('LzzyCart');
+        if (lzzyCart == null || lzzyCart == '') 
+        {
+          return new CartData();
+        }
+        else 
+        {
+            return JSON.parse(lzzyCart);
+        }
+
 
       }
 
-      //获取选中对象的列表的总数量
+      // 加入购物车
+      addToCart(order)
+      {
+        let cartData=this.getDataFromLocalSatorge()
+        var flag=true;
+        // for(const i in cartData.orderList)
+        for(var i=0;i<cartData.orderList.length;i++)
+        {
+          if(order.id ==cartData.orderList[i].id)
+          {
+            flag=false;
+            // 新增qty（数量）
+            cartData.orderList[i].qty+=order.qty;
+            break;
+          }
+        }
+
+        if(flag)
+        {
+          // 新商品给样本++
+          cartData.orderList.push(order);
+          cartData.units++;
+        }
+        cartData.totalQty +=order.qty;
+        cartData.totalAmount +=order.price*order.qty;
+
+        // 写入loslocalStorage
+        this.setDataToLocalSatorge(cartData);
+
+      }
+
+      // 清空购物车
+      clearCart()
+      {
+        localStorage.removeItem('LzzyCart');
+      }
+
+      //获取选中对象的列表的总数量(获取购物车中订单列表)
       getSelectedList()
       {
+        
 
       }
 
-      // 获取选中对象的列表的总数量
+      // 获取选中对象的列表的总数量（获取选中商品的总数量）
       getSelectedQty()
       {
+        let cartData=this.getDataFromLocalSatorge();
+        let orderList=cartData.orderList;
+        let selectedQty=0;
+        for(let i in orderList)
+        {
+          if(orderList[i].selectStatus)
+          {
+            selectedQty+=orderList[i].qty;
+          }
+        }
+        return selectedQty;
 
       }
 
-      // 获取选中对象的列表的总价格
+      // 获取选中对象的列表的总价格（获取选中商品的总数量）
       getSelectedAmount()
       {
+        let cartData=this.getDataFromLocalSatorge();
+        let orderList=cartData.orderList;
+        let selectedAmount=0;
+        for(let i in orderList)
+        {
+          if(orderList[i].selectStatus)
+          {
+            selectedAmount+=orderList[i].price*orderList[i].qty;
+          }
+        }
+        return selectedAmount;
+
 
       }
 
