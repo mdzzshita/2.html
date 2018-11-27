@@ -240,6 +240,10 @@ localStorage.removeItem("key")//删除变量名为key的存储变量
       else
       {
         orderList.splice(index,1);
+        cartData.totalQty -=order.qty;
+        cartData.totalAmount -=order.qty * order.price;
+        cartData.units--;
+        this.setDataToLocalSatorge(cartData);
       }
     }
 
