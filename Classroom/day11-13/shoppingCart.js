@@ -156,7 +156,7 @@ localStorage.removeItem("key")//删除变量名为key的存储变量
         {
           if (orderList[key].selectStatus) 
           {
-              selectedAmount += orderList[key].qty * orderList[key].price;
+              selectedAmount+=orderList[key].price*orderList[key].qty;
           }
         }
         return selectedAmount;
