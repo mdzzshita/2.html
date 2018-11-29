@@ -248,6 +248,10 @@ localStorage.removeItem("key")//删除变量名为key的存储变量
     }
 
 
+    getTotalUnits(){
+      let cartData=this.getDataFromLocalSatorge();
+      return cartData.units;
+  }
 
 
     
