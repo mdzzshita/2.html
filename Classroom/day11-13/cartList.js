@@ -23,7 +23,7 @@ function displayOrderList()
     for(let i=0; i < orderList.length; i++)
     {
         // 当前订单数据
-        let order=orderList[i];
+         
         console.log(order);
         // 克隆样本节点形成当前订单节点
         node=orderExample.cloneNode(true);
@@ -65,6 +65,8 @@ function displayOrderList()
         node.classList.remove('d-none');
 
         
+
+        
     } 
     // 克隆一个样本节点
     // 设置一个新id
@@ -98,11 +100,23 @@ function regEvent() {
     console.log(element);
     // 注册单击事件触发函数
     element.onclick = clearAllEventFun;
+
+    // 获取删除节点
+    let deleteItem=cartRoot.querySelectoAllr('[data-operator="deleteItem"]');
+    console.log(deleteItem);
+    // 注册单击事件触发函数
+    for(const key in deleteItem)
+    {
+        const deleteItem=deleteItem[key];
+        deleteItem.onclick=deleteItemEventFun;
+    }
+    
 }
 
 
 // 清空事件触发函数
-function clearAllEventFun() {
+function clearAllEventFun() 
+{
     cart.clearCart();
     // 获取订单根节点
     let cartListNode = document.querySelector('#cartContent');
@@ -117,7 +131,9 @@ function clearAllEventFun() {
 }
 
 //删除事件触发函数
-function deleteItemEventFun() {
+function deleteItemEventFun(e)
+{
+    let button=e.target;
 }
 
 
