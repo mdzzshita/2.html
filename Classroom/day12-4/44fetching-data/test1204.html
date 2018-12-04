@@ -11,18 +11,37 @@
     <div id="text">
     </div>
     <script>
+        // var ajax=new XMLHttpRequest();
+        // var url='verse4.txt';
+        // ajax.open('get',url);
+        // ajax.responseType='text';
+        // ajax.onreadystatechange=function()
+        // {
+        //     console.log(ajax.readyState);
+        //     console.log(ajax.status);
+        //     if(ajax.readyState==4 && ajax.status==200)
+        //     {
+        //         let divNode=document.querySelector('#text');
+        //         divNode.textContent=ajax.response;
+        //     }
+        // }
+        // ajax.send();
+
+
         var ajax=new XMLHttpRequest();
-        var url='verse4.txt';
+        var arr;
+        var url='can-store/products.json';
         ajax.open('get',url);
-        ajax.responseType='text';
+        ajax.responseType='json';
         ajax.onreadystatechange=function()
         {
             console.log(ajax.readyState);
             console.log(ajax.status);
             if(ajax.readyState==4 && ajax.status==200)
             {
-                let divNode=document.querySelector('#text');
-                divNode.textContent=ajax.response;
+                arr=ajax.response;
+                console.log(arr[3]);
+                
             }
         }
         ajax.send();
