@@ -22,6 +22,7 @@ request.send();
 // sets up the app logic, declares required variables, contains all the other functions
 function initialize() {
   // grab the UI elements that we need to manipulate
+  // 获取搜索相关节点
   var category = document.querySelector('#category');
   var searchTerm = document.querySelector('#searchTerm');
   var searchBtn = document.querySelector('button');
@@ -139,6 +140,7 @@ function initialize() {
     // for each product we want to display, pass its product object to fetchBlob()
     } else {
       for(var i = 0; i < finalGroup.length; i++) {
+        // 发送图片
         fetchBlob(finalGroup[i]);
       }
     }
@@ -175,6 +177,7 @@ function initialize() {
   // Display a product inside the <main> element
   function showProduct(objectURL, product) {
     // create <section>, <h2>, <p>, and <img> elements
+    // 创建一个section
     var section = document.createElement('section');
     var heading = document.createElement('h2');
     var para = document.createElement('p');
